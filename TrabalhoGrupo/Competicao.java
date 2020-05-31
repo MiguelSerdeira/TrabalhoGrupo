@@ -143,14 +143,6 @@ public class Competicao {
 		return mostrar;
 	}
 
-	public int codIdentEquipa(int codIdent) {
-		for (int i = 0; i < equipa.size(); i++) {
-			if (equipa.get(i).getCodIdent() == codIdent)
-				return i;
-		}
-		return -1;
-	}
-
 	public boolean removeEquipas(int codIdent) {
 		int procurar = codIdentEquipa(codIdent);
 		if (procurar == -1)
@@ -167,6 +159,45 @@ public class Competicao {
 		return true;
 	}
 
+	public boolean removeJogos(int codIdent) {
+		int procurar = codIdentEquipa(codIdent);
+		if (procurar == -1)
+			return false;
+		equipa.remove(procurar);
+		return true;
+	}
+
+	public boolean editarEquipa(int codIdent, Equipa equipa) {
+		int procurar = codIdentEquipa(codIdent);
+		if (procurar == -1)
+			return false;
+		this.equipa.set(procurar, equipa);
+		return true;
+	}
+
+	public boolean editarJogo(int codIdent, Jogo jogo) {
+		int procurar = codIdentJogo(codIdent);
+		if (procurar == -1)
+			return false;
+		this.jogo.set(procurar, jogo);
+		return true;
+	}
+
+	public int codIdentEquipa(int codIdent) {
+		for (int i = 0; i < equipa.size(); i++) {
+			if (equipa.get(i).getCodIdent() == codIdent)
+				return i;
+		}
+		return -1;
+	}
+
+	public int codIdentJogo(int codIdent) {
+		for (int i = 0; i < jogo.size(); i++) {
+			if (jogo.get(i).getCodIdent() == codIdent)
+				return i;
+		}
+		return -1;
+	}
 	// =======================================================
 	// ============== M�TODOS COMPLEMENTARES ==============
 	// =======================================================
