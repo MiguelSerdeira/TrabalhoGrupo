@@ -71,7 +71,7 @@ public class Equipa {
 
 	// CONSTRUTOR DEFAULT
 
-	// CONSTRUTOR COM PARÂMETROS
+	// CONSTRUTOR COM PARï¿½METROS
 
 	// =======================================================
 	// =================== .COMPORTAMENTOS ==================
@@ -126,7 +126,7 @@ public class Equipa {
     }
 	
 	// =======================================================
-	// ============== MÉTODOS COMPLEMENTARES ==============
+	// ============== Mï¿½TODOS COMPLEMENTARES ==============
 	// =======================================================
 
 	// ----> toString()
@@ -136,5 +136,5 @@ public class Equipa {
 				+ jogador + "\r\n" + "Treinador=" + treinador + "]" + "\r\n";
 	}
 
-	// ----> equals()
+	
 }
