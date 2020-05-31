@@ -16,7 +16,7 @@ public class Competicao {
 	private String escalao;
 	private int participantes;
 	private List<Equipa> equipa = new ArrayList<Equipa>();
-	private List<Jogo> jogos = new ArrayList<Jogo>();
+	private List<Jogo> jogo = new ArrayList<Jogo>();
 
 	// =======================================================
 	// ============ ACESSORES e MODIFICADORES ===============
@@ -71,15 +71,18 @@ public class Competicao {
 	}
 
 	public List<Jogo> getJogos() {
-		return jogos;
+		return jogo;
 	}
 
 	public void setJogos(List<Jogo> jogos) {
-		this.jogos = jogos;
+		this.jogo = jogos;
+	
 	}
 
 	public void addJogos(Jogo jogos) {
-		this.jogos.add(jogos);
+		
+	
+		this.jogo.add(jogos);
 	}
 
 	public List<Equipa> getEquipa() {
@@ -91,36 +94,44 @@ public class Competicao {
 	}
 
 	public void addEquipas(Equipa equipa) {
+
+		if (codIdentEquipa(equipa.getCodIdent()) >= 0) {
+			throw new IllegalArgumentException("A equipa com o código:" + equipa.getCodIdent() + " já existe");
+
+		}
+
 		this.equipa.add(equipa);
 	}
 
+
+	
 	// =======================================================
 	// =================== CONSTRUTORES =====================
 	// =======================================================
 
 	// CONSTRUTOR DEFAULT
 
-	// CONSTRUTOR COM PAR�METROS
+	// CONSTRUTOR COM PARÂMETROS
 
 	// =======================================================
 	// =================== .COMPORTAMENTOS ==================
 	// =======================================================
-
-	public String mostrarTudo() {
-
-        String mostrar = "";
-        mostrar += "======COMPETICAO======" + "\n";
-
-        mostrar += "Codigo: " + this.getCodIdent() + "\n";
-        mostrar += "Nome: " + this.getNome() + "\n";
-        mostrar += "Escalao: " + this.getEscalao() + "\n";
-
-        mostrar += this.mostrarEquipas() + "\n";
-
-        return mostrar;
-
-    }
 	
+	public String mostrarTudo() {
+		
+		String mostrar = "";
+		mostrar += "======COMPETICAO======" + "\n";
+
+		mostrar += "Codigo: " + this.getCodIdent() + "\n";
+		mostrar += "Nome: " + this.getNome() + "\n";
+		mostrar += "Escalao: " + this.getEscalao() + "\n";
+
+		mostrar += this.mostrarEquipas() + "\n";
+
+		return mostrar;
+
+	}
+
 	public String mostrarEquipas() {
 		String mostrar = "";
 		
@@ -142,20 +153,12 @@ public class Competicao {
 		}
 		return mostrar;
 	}
-
+	
 	public boolean removeEquipas(int codIdent) {
 		int procurar = codIdentEquipa(codIdent);
 		if (procurar == -1)
 			return false;
 		equipa.remove(procurar);
-		return true;
-	}
-
-	public boolean editarEquipa(int codIdent, Equipa equipa) {
-		int procurar = codIdentEquipa(codIdent);
-		if (procurar == -1)
-			return false;
-		this.equipa.set(procurar, equipa);
 		return true;
 	}
 
@@ -166,7 +169,7 @@ public class Competicao {
 		equipa.remove(procurar);
 		return true;
 	}
-
+	
 	public boolean editarEquipa(int codIdent, Equipa equipa) {
 		int procurar = codIdentEquipa(codIdent);
 		if (procurar == -1)
@@ -174,7 +177,7 @@ public class Competicao {
 		this.equipa.set(procurar, equipa);
 		return true;
 	}
-
+	
 	public boolean editarJogo(int codIdent, Jogo jogo) {
 		int procurar = codIdentJogo(codIdent);
 		if (procurar == -1)
@@ -182,7 +185,7 @@ public class Competicao {
 		this.jogo.set(procurar, jogo);
 		return true;
 	}
-
+	
 	public int codIdentEquipa(int codIdent) {
 		for (int i = 0; i < equipa.size(); i++) {
 			if (equipa.get(i).getCodIdent() == codIdent)
@@ -190,7 +193,7 @@ public class Competicao {
 		}
 		return -1;
 	}
-
+	
 	public int codIdentJogo(int codIdent) {
 		for (int i = 0; i < jogo.size(); i++) {
 			if (jogo.get(i).getCodIdent() == codIdent)
@@ -199,8 +202,21 @@ public class Competicao {
 		return -1;
 	}
 
+	public boolean jornadaJogo (Jogo jogo1) {
+		for (Jogo jogo : jogo) {
+			if (jogo.getJornada() == jogo.getJornada()) {
+				if (jogo.getEquipaVisitada().getCodIdent() == jogo.getEquipaVisitada().getCodIdent())
+					return true;
+				if (jogo.getEquipaVisitante().getCodIdent() == jogo.getEquipaVisitante().getCodIdent());
+					return true;
+				
+			}
+		}
+		return false;
+	}
+
 	// =======================================================
-	// ============== M�TODOS COMPLEMENTARES ==============
+	// ============== MÉTODOS COMPLEMENTARES ==============
 	// =======================================================
 
 	// ----> toString()
@@ -209,7 +225,7 @@ public class Competicao {
 	public String toString() {
 		return "Competicao [codIdent=" + codIdent + ", nome=" + nome + ", dataInicio=" + dataInicio + ", dataFim="
 				+ dataFim + ", escalao=" + escalao + ", participantes=" + participantes + "equipa=" + equipa
-				+ ", jogos=" + jogos + "]";
+				+ ", jogos=" + jogo + "]";
 	}
 
 	// ----> equals()
