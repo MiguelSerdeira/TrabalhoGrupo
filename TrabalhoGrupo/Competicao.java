@@ -100,12 +100,27 @@ public class Competicao {
 
 	// CONSTRUTOR DEFAULT
 
-	// CONSTRUTOR COM PARÂMETROS
+	// CONSTRUTOR COM PARï¿½METROS
 
 	// =======================================================
 	// =================== .COMPORTAMENTOS ==================
 	// =======================================================
 
+	public String mostrarTudo() {
+
+        String mostrar = "";
+        mostrar += "======COMPETICAO======" + "\n";
+
+        mostrar += "Codigo: " + this.getCodIdent() + "\n";
+        mostrar += "Nome: " + this.getNome() + "\n";
+        mostrar += "Escalao: " + this.getEscalao() + "\n";
+
+        mostrar += this.mostrarEquipas() + "\n";
+
+        return mostrar;
+
+    }
+	
 	public int codIdentEquipa(int codIdent) {
 		for (int i = 0; i < equipa.size(); i++) {
 			if (equipa.get(i).getCodIdent() == codIdent)
@@ -131,7 +146,7 @@ public class Competicao {
 	}
 
 	// =======================================================
-	// ============== MÉTODOS COMPLEMENTARES ==============
+	// ============== Mï¿½TODOS COMPLEMENTARES ==============
 	// =======================================================
 
 	// ----> toString()
