@@ -1,22 +1,19 @@
 package TrabalhoGrupo;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
-public class Competicao {
+public class Equipa {
+
 	// =======================================================
 	// ===================== ATRIBUTOS =======================
 	// =======================================================
 
 	private int codIdent;
 	private String nome;
-	private Date dataInicio;
-	private Date dataFim;
 	private String escalao;
-	private int participantes;
-	private List<Equipa> equipa = new ArrayList<Equipa>();
-	private List<Jogo> jogos = new ArrayList<Jogo>();
+	private List<Jogador> jogador = new ArrayList<Jogador>();
+	private List<Treinador> treinador = new ArrayList<Treinador>();
 
 	// =======================================================
 	// ============ ACESSORES e MODIFICADORES ===============
@@ -38,22 +35,6 @@ public class Competicao {
 		this.nome = nome;
 	}
 
-	public Date getDataInicio() {
-		return dataInicio;
-	}
-
-	public void setDataInicio(Date dataInicio) {
-		this.dataInicio = dataInicio;
-	}
-
-	public Date getDataFim() {
-		return dataFim;
-	}
-
-	public void setDataFim(Date dataFim) {
-		this.dataFim = dataFim;
-	}
-
 	public String getEscalao() {
 		return escalao;
 	}
@@ -62,156 +43,138 @@ public class Competicao {
 		this.escalao = escalao;
 	}
 
-	public int getParticipantes() {
-		return participantes;
+	public List<Jogador> getJogador() {
+		return jogador;
 	}
 
-	public void setParticipantes(int participantes) {
-		this.participantes = participantes;
+	public void setJogador(List<Jogador> jogador) {
+		this.jogador = jogador;
 	}
 
-	public List<Jogo> getJogos() {
-		return jogos;
+	public void addJogador(Jogador jogador) {
+		this.jogador.add(jogador);
+
 	}
 
-	public void setJogos(List<Jogo> jogos) {
-		this.jogos = jogos;
+	public List<Treinador> getTreinador() {
+		return treinador;
 	}
 
-	public void addJogos(Jogo jogos) {
-		this.jogos.add(jogos);
+	public void setTreinador(List<Treinador> treinador) {
+		this.treinador = treinador;
 	}
 
-	public List<Equipa> getEquipa() {
-		return equipa;
+	public void addTreinador(Treinador treinador) {
+		this.treinador.add(treinador);
 	}
-
-	public void setEquipa(List<Equipa> equipa) {
-		this.equipa = equipa;
-	}
-
-	public void addEquipas(Equipa equipa) {
-		this.equipa.add(equipa);
-	}
-
 	// =======================================================
 	// =================== CONSTRUTORES =====================
 	// =======================================================
 
 	// CONSTRUTOR DEFAULT
 
-	// CONSTRUTOR COM PAR�METROS
+	// CONSTRUTOR COM PARÂMETROS
 
 	// =======================================================
 	// =================== .COMPORTAMENTOS ==================
 	// =======================================================
 
 	public String mostrarTudo() {
-
-        String mostrar = "";
-        mostrar += "======COMPETICAO======" + "\n";
-
-        mostrar += "Codigo: " + this.getCodIdent() + "\n";
-        mostrar += "Nome: " + this.getNome() + "\n";
-        mostrar += "Escalao: " + this.getEscalao() + "\n";
-
-        mostrar += this.mostrarEquipas() + "\n";
-
-        return mostrar;
-
-    }
-	
-	public String mostrarEquipas() {
 		String mostrar = "";
-		
-		for (Equipa equipa : equipa) {
-		
+		mostrar += "======EQUIPA======" + "\n";
 
-			mostrar += equipa.mostrarTudo()+"\n";
+		mostrar += "Equipa: " + this.getNome() + "\n";
+		mostrar += "Codigo: " + this.getCodIdent() + "\n";
+		mostrar += "Escalao: " + this.getEscalao() + "\n";
+		mostrar += "Jogadores: " + this.getJogador().size() + "\n";
+		mostrar += "Treinadores: " + this.getTreinador().size() + "\n";
+		return mostrar;
+	}
+
+	public String mostrarJogadores() {
+		String mostrar = "";
+
+		this.jogador.sort(null);
+		for (Jogador jogador : jogador) {
+			mostrar += jogador.mostrarTudo();
 		}
 		return mostrar;
 	}
 
-	public String mostrarJogosJornada (int jornada) {
+	public String mostrarTreinadores() {
 		String mostrar = "";
-		
-		for (Jogo jogo: jogo) {
-			if (jogo.getJornada() == jornada)
-				mostrar += "======JOGOS======" + "\n";
-				mostrar += jogo.mostrarTudo()+"\n";
+
+		this.jogador.sort(null);
+		for (Treinador treinador : treinador) {
+			mostrar += treinador.mostrarTudo();
 		}
 		return mostrar;
 	}
 
-	public boolean removeEquipas(int codIdent) {
-		int procurar = codIdentEquipa(codIdent);
+	public boolean removeJogador(int numeroCartaoCidadao) {
+		int procurar = cidadaoJogador(numeroCartaoCidadao);
 		if (procurar == -1)
 			return false;
-		equipa.remove(procurar);
+		this.jogador.remove(procurar);
 		return true;
 	}
 
-	public boolean editarEquipa(int codIdent, Equipa equipa) {
-		int procurar = codIdentEquipa(codIdent);
+	public boolean removeTreinador(int numeroCartaoCidadao) {
+		int procurar = cidadaoTreinador(numeroCartaoCidadao);
 		if (procurar == -1)
 			return false;
-		this.equipa.set(procurar, equipa);
+		this.treinador.remove(procurar);
 		return true;
 	}
 
-	public boolean removeJogos(int codIdent) {
-		int procurar = codIdentEquipa(codIdent);
+	public boolean editarJogador(int numeroCartaoCidadao, Jogador jogador) {
+		int procurar = cidadaoJogador(numeroCartaoCidadao);
 		if (procurar == -1)
 			return false;
-		equipa.remove(procurar);
+		this.jogador.set(procurar, jogador);
 		return true;
 	}
 
-	public boolean editarEquipa(int codIdent, Equipa equipa) {
-		int procurar = codIdentEquipa(codIdent);
+	public boolean editarTreinador(int numeroCartaoCidadao, Treinador treinador) {
+		int procurar = cidadaoTreinador(numeroCartaoCidadao);
 		if (procurar == -1)
 			return false;
-		this.equipa.set(procurar, equipa);
+		this.treinador.set(procurar, treinador);
 		return true;
 	}
 
-	public boolean editarJogo(int codIdent, Jogo jogo) {
-		int procurar = codIdentJogo(codIdent);
-		if (procurar == -1)
-			return false;
-		this.jogo.set(procurar, jogo);
-		return true;
-	}
-
-	public int codIdentEquipa(int codIdent) {
-		for (int i = 0; i < equipa.size(); i++) {
-			if (equipa.get(i).getCodIdent() == codIdent)
+	public int cidadaoJogador(int numeroCartaoCidadao) {
+		for (int i = 0; i < jogador.size(); i++) {
+			if (jogador.get(i).getNumeroCartaoCidadao() == numeroCartaoCidadao)
 				return i;
 		}
 		return -1;
 	}
 
-	public int codIdentJogo(int codIdent) {
-		for (int i = 0; i < jogo.size(); i++) {
-			if (jogo.get(i).getCodIdent() == codIdent)
+	public int cidadaoTreinador(int numeroCartaoCidadao) {
+		for (int i = 0; i < treinador.size(); i++) {
+			if (treinador.get(i).getNumeroCartaoCidadao() == numeroCartaoCidadao)
 				return i;
 		}
 		return -1;
 	}
 
 	// =======================================================
-	// ============== M�TODOS COMPLEMENTARES ==============
+	// ============== MÉTODOS COMPLEMENTARES ==============
 	// =======================================================
 
 	// ----> toString()
-
 	@Override
 	public String toString() {
-		return "Competicao [codIdent=" + codIdent + ", nome=" + nome + ", dataInicio=" + dataInicio + ", dataFim="
-				+ dataFim + ", escalao=" + escalao + ", participantes=" + participantes + "equipa=" + equipa
-				+ ", jogos=" + jogos + "]";
+		String mostrar = "";
+
+		mostrar += "Equipa: " + this.getNome() + "\n";
+		mostrar += "Codigo: " + this.getCodIdent() + "\n";
+		mostrar += "Escalao: " + this.getEscalao() + "\n";
+		mostrar += "Jogadores: " + this.getJogador().size() + "\n";
+		mostrar += "Treinadores: " + this.getTreinador().size() + "\n";
+		return mostrar;
 	}
 
 	// ----> equals()
-
 }
