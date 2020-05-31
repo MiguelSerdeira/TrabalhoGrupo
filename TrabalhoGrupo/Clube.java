@@ -120,14 +120,36 @@ public class Clube {
 
 	// CONSTRUTOR DEFAULT
 
-	// CONSTRUTOR COM PARÂMETROS
+	// CONSTRUTOR COM PARï¿½METROS
 
 	// =======================================================
 	// =================== .COMPORTAMENTOS ==================
 	// =======================================================
+public boolean removeEquipa(int codIdent) {
+        int procurar = codIdentEquipa(codIdent);
+        if (procurar == -1)
+            return false;
+        this.equipa.remove(procurar);
+        return true;
+    }
 
+    public boolean editarEquipa(int codIdent, Equipa equipa) {
+        int procurar = codIdentEquipa(codIdent);
+        if (procurar == -1)
+            return false;
+        this.equipa.set(procurar, equipa);
+        return true;
+    }
+
+    public int codIdentEquipa(int codIdent) {
+        for (int i = 0; i < equipa.size(); i++) {
+            if (equipa.get(i).getCodIdent() == codIdent)
+                return i;
+        }
+        return -1;
+    }
 	// =======================================================
-	// ============== MÉTODOS COMPLEMENTARES ==============
+	// ============== Mï¿½TODOS COMPLEMENTARES ==============
 	// =======================================================
 
 	// ----> toString()
