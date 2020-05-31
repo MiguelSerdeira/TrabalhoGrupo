@@ -73,13 +73,21 @@ public class Equipa {
 
 	// CONSTRUTOR DEFAULT
 
+<<<<<<< HEAD
 	// CONSTRUTOR COM PARÂMETROS
+=======
+	// CONSTRUTOR COM PAR�METROS
+>>>>>>> Desenvolvimento
 
 	// =======================================================
 	// =================== .COMPORTAMENTOS ==================
 	// =======================================================
 
+<<<<<<< HEAD
 	public String mostrarTudo() {
+=======
+public String mostrarTudo() {
+>>>>>>> Desenvolvimento
 		String mostrar = "";
 		mostrar += "======EQUIPA======" + "\n";
 
@@ -160,7 +168,11 @@ public class Equipa {
 	}
 
 	// =======================================================
+<<<<<<< HEAD
 	// ============== MÉTODOS COMPLEMENTARES ==============
+=======
+	// ============== M�TODOS COMPLEMENTARES ==============
+>>>>>>> Desenvolvimento
 	// =======================================================
 
 	// ----> toString()
