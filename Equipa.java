@@ -136,5 +136,5 @@ public class Equipa {
 				+ jogador + "\r\n" + "Treinador=" + treinador + "]" + "\r\n";
 	}
 
-	
+	// ----> equals()
 }
