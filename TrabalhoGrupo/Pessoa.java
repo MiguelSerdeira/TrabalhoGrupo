@@ -2,85 +2,87 @@ package TrabalhoGrupo;
 
 import java.util.Date;
 
-public abstract class Pessoa {
+public abstract class Pessoa implements Comparable <Pessoa> {
 
-	// =======================================================
-	// ===================== ATRIBUTOS =======================
-	// =======================================================
-
+    // =======================================================
+    // ===================== ATRIBUTOS =======================
+    // =======================================================
+	
 	private int numeroCartaoCidadao;
 	private String nome;
 	private int contacto;
 	private String email;
 	private Date dataNascimento;
 
-	// =======================================================
-	// ============ ACESSORES e MODIFICADORES ===============
-	// =======================================================
+    // =======================================================
+    // ============ ACESSORES e MODIFICADORES ===============
+    // =======================================================
 
 	public int getNumeroCartaoCidadao() {
 		return numeroCartaoCidadao;
 	}
-
 	public void setNumeroCartaoCidadao(int numeroCartaoCidadao) {
 		this.numeroCartaoCidadao = numeroCartaoCidadao;
 	}
-
 	public String getNome() {
 		return nome;
 	}
-
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-
 	public int getContacto() {
 		return contacto;
 	}
-
 	public void setContacto(int contacto) {
 		this.contacto = contacto;
 	}
-
 	public String getEmail() {
 		return email;
 	}
-
 	public void setEmail(String email) {
 		this.email = email;
 	}
-
 	public Date getDataNascimento() {
 		return dataNascimento;
 	}
-
 	public void setDataNascimento(Date dataNascimento) {
 		this.dataNascimento = dataNascimento;
 	}
 
-	// =======================================================
-	// =================== CONSTRUTORES =====================
-	// =======================================================
+    // =======================================================
+    // =================== CONSTRUTORES =====================
+    // =======================================================
 
-	// CONSTRUTOR DEFAULT
+  
+   
+    // CONSTRUTOR DEFAULT
 
-	// CONSTRUTOR COM PARÂMETROS
+   
 
-	// =======================================================
-	// =================== .COMPORTAMENTOS ==================
-	// =======================================================
+    // CONSTRUTOR COM PARÃ‚METROS
 
-	// =======================================================
-	// ============== MÉTODOS COMPLEMENTARES ==============
-	// =======================================================
 
-	// ----> toString()
+
+    // =======================================================
+    // =================== .COMPORTAMENTOS ==================
+    // =======================================================
+
+	public int compareTo(Pessoa obj) {
+		return obj.nome.compareTo(this.nome) * -1;
+	}
+
+
+    // =======================================================
+    // ============== MÃ‰TODOS COMPLEMENTARES ==============
+    // =======================================================
+
+    // ----> toString()
 
 	@Override
 	public String toString() {
 		return "Pessoa [numeroCartaoCidadao=" + numeroCartaoCidadao + ", nome=" + nome + ", contacto=" + contacto
-				+ ", email=" + email + ", dataNascimento=" + dataNascimento + "]" + "\r\n";
+				+ ", email=" + email + ", dataNascimento=" + dataNascimento + "]";
 	}
 
-	// ----> equals()
+    // ----> equals()
 }
