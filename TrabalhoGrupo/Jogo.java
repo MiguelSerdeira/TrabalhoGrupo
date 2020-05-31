@@ -98,11 +98,16 @@ public class Jogo {
 
 	// CONSTRUTOR DEFAULT
 
+<<<<<<< HEAD
 	// CONSTRUTOR COM PARÃ‚METROS
+=======
+	// CONSTRUTOR COM PARÂMETROS
+>>>>>>> Desenvolvimento
 
 	// =======================================================
 	// =================== .COMPORTAMENTOS ==================
 	// =======================================================
+<<<<<<< HEAD
 
 	public String mostrarTudo() {
 		String mostrar = "";
@@ -203,6 +208,33 @@ public class Jogo {
 
 	// =======================================================
 	// ============== MÃ‰TODOS COMPLEMENTARES ==============
+=======
+	public boolean removerArbitro(int numeroCartaoCidadao) { 
+        int procurar = cidadaoArbitro(numeroCartaoCidadao); 
+        if (procurar == -1) 
+            return false; 
+        this.arbitro.remove(procurar); 
+        return true; 
+    } 
+ 
+    public boolean editarArbitro(int numeroCartaoCidadao, Arbitro arbitro) { 
+        int procurar = cidadaoArbitro(numeroCartaoCidadao); 
+        if (procurar == -1) 
+            return false; 
+        this.arbitro.set(procurar, arbitro); 
+        return true; 
+    } 
+ 
+    private int cidadaoArbitro(int numeroCartaoCidadao) { 
+        for (int i = 0; i < arbitro.size(); i++) { 
+            if (arbitro.get(i).getNumeroCartaoCidadao() == numeroCartaoCidadao) 
+                return i; 
+        } 
+        return -1; 
+    } 
+	// =======================================================
+	// ============== MÉTODOS COMPLEMENTARES ==============
+>>>>>>> Desenvolvimento
 	// =======================================================
 
 	// ----> toString()

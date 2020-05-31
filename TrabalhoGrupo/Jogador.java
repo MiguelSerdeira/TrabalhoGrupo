@@ -43,6 +43,7 @@ public class Jogador extends Pessoa{
 
 
 
+<<<<<<< HEAD
     // =======================================================
     // =================== .COMPORTAMENTOS ==================
     // =======================================================
@@ -50,6 +51,30 @@ public class Jogador extends Pessoa{
 	public String mostrarTudo() {
 		String mostrar = "";
 		mostrar +=  "======JOGADOR======" + "\n";
+=======
+	// =======================================================
+	// =================== .COMPORTAMENTOS ==================
+	// =======================================================
+	 
+	public String mostrarTudo() { 
+	        String mostrar = ""; 
+	        mostrar +=  "======JOGADOR======" + "\n"; 
+	 
+	        mostrar += "Nome: " + this.getNome() + "\n"; 
+	        mostrar += "Contato: " + this.getContacto() + "\n"; 
+	        mostrar += "Email: " + this.getEmail() + "\n"; 
+	        mostrar += "Cartão de cidadão: " + this.getNumeroCartaoCidadao() + "\n"; 
+	        mostrar += "Pé preferido: " + this.getPe() + "\n"; 
+	        mostrar += "Posição: " + this.getPosicao() + "\n" ; 
+	        mostrar += "\n" ; 
+	 
+	        return mostrar; 
+	    } 
+	 
+	// =======================================================
+	// ============== MÉTODOS COMPLEMENTARES ==============
+	// =======================================================
+>>>>>>> Desenvolvimento
 
 		mostrar += "Nome: " + this.getNome() + "\n";
 		mostrar += "Contato: " + this.getContacto() + "\n";

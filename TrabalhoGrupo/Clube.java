@@ -99,6 +99,35 @@ public class Clube {
 
 	}
 
+	
+	// =======================================================
+	// =================== CONSTRUTORES =====================
+	// =======================================================
+
+	// CONSTRUTOR DEFAULT
+
+	// CONSTRUTOR COM PAR�METROS
+
+	// =======================================================
+	// =================== .COMPORTAMENTOS ==================
+	// =======================================================
+	
+	public String mostrarTudo() {
+		String mostrar = "";
+		mostrar += "======CLUBE======"+ "\n";
+		mostrar += "Clube: " + this.getNome() + "\n"; 
+		mostrar += "Codigo: " + this.getCodIdent() + "\n";
+		mostrar += "Equipas : " + this.getEquipa().size() + "\n";
+		mostrar += "Email: " + this.getEmail() + "\n";
+		mostrar += "Morada: " + this.getMorada() + "\n";
+		mostrar += "Contacto: " + this.getContato() + "\n";
+		mostrar += "Cor do Equipamento: " + this.getCorEquipamento() + "\n";
+		mostrar += "Data de Fundação: " + this.getDataFundacao() + "\n";
+
+		return mostrar;
+
+	}
+	
 	public int nTotalJogadores() {
 		int nmrJogadores = 0;
 		for (Equipa equipa : this.equipa) {
@@ -114,40 +143,30 @@ public class Clube {
 		}
 		return nmrTreinadores;
 	}
-	// =======================================================
-	// =================== CONSTRUTORES =====================
-	// =======================================================
-
-	// CONSTRUTOR DEFAULT
-
-	// CONSTRUTOR COM PAR�METROS
-
-	// =======================================================
-	// =================== .COMPORTAMENTOS ==================
-	// =======================================================
-public boolean removeEquipa(int codIdent) {
-        int procurar = codIdentEquipa(codIdent);
-        if (procurar == -1)
-            return false;
-        this.equipa.remove(procurar);
-        return true;
-    }
-
-    public boolean editarEquipa(int codIdent, Equipa equipa) {
-        int procurar = codIdentEquipa(codIdent);
-        if (procurar == -1)
-            return false;
-        this.equipa.set(procurar, equipa);
-        return true;
-    }
-
-    public int codIdentEquipa(int codIdent) {
-        for (int i = 0; i < equipa.size(); i++) {
-            if (equipa.get(i).getCodIdent() == codIdent)
-                return i;
-        }
-        return -1;
-    }
+	
+	public boolean removeEquipa(int codIdent) { 
+        int procurar = codIdentEquipa(codIdent); 
+        if (procurar == -1) 
+            return false; 
+        this.equipa.remove(procurar); 
+        return true; 
+    } 
+ 
+    public boolean editarEquipa(int codIdent, Equipa equipa) { 
+        int procurar = codIdentEquipa(codIdent); 
+        if (procurar == -1) 
+            return false; 
+        this.equipa.set(procurar, equipa); 
+        return true; 
+    } 
+ 
+    public int codIdentEquipa(int codIdent) { 
+        for (int i = 0; i < equipa.size(); i++) { 
+            if (equipa.get(i).getCodIdent() == codIdent) 
+                return i; 
+        } 
+        return -1; 
+    } 
 	// =======================================================
 	// ============== M�TODOS COMPLEMENTARES ==============
 	// =======================================================
