@@ -121,6 +121,28 @@ public class Competicao {
 
     }
 	
+	public String mostrarEquipas() {
+		String mostrar = "";
+		
+		for (Equipa equipa : equipa) {
+		
+
+			mostrar += equipa.mostrarTudo()+"\n";
+		}
+		return mostrar;
+	}
+
+	public String mostrarJogosJornada (int jornada) {
+		String mostrar = "";
+		
+		for (Jogo jogo: jogo) {
+			if (jogo.getJornada() == jornada)
+				mostrar += "======JOGOS======" + "\n";
+				mostrar += jogo.mostrarTudo()+"\n";
+		}
+		return mostrar;
+	}
+
 	public int codIdentEquipa(int codIdent) {
 		for (int i = 0; i < equipa.size(); i++) {
 			if (equipa.get(i).getCodIdent() == codIdent)
