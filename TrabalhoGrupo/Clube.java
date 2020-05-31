@@ -76,7 +76,7 @@ public class Clube {
 	public void addEquipas(Equipa equipa) {
 
 		if (codIdentEquipa(equipa.getCodIdent()) >= 0) {
-			throw new IllegalArgumentException("A equipa com o cÃ³digo: " + equipa.getCodIdent() + " jÃ¡ existe");
+			throw new IllegalArgumentException("A equipa com o código: " + equipa.getCodIdent() + " já existe");
 		}
 		
 		this.equipa.add(equipa);
@@ -95,7 +95,7 @@ public class Clube {
 
    
 
-    // CONSTRUTOR COM PARÃ‚METROS
+    // CONSTRUTOR COM PARÂMETROS
 
 
 
@@ -113,7 +113,7 @@ public class Clube {
 		mostrar += "Morada: " + this.getMorada() + "\n";
 		mostrar += "Contacto: " + this.getContato() + "\n";
 		mostrar += "Cor do Equipamento: " + this.getCorEquipamento() + "\n";
-		mostrar += "Data de FundaÃ§Ã£o: " + this.getDataFundacao() + "\n";
+		mostrar += "Data de Fundação: " + this.getDataFundacao() + "\n";
 
 		return mostrar;
 
@@ -161,7 +161,7 @@ public class Clube {
 	}
 	
     // =======================================================
-    // ============== MÃ‰TODOS COMPLEMENTARES ==============
+    // ============== MÉTODOS COMPLEMENTARES ==============
     // =======================================================
 
     // ----> toString()

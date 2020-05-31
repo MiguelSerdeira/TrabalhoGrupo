@@ -96,7 +96,7 @@ public class Competicao {
 	public void addEquipas(Equipa equipa) {
 
 		if (codIdentEquipa(equipa.getCodIdent()) >= 0) {
-			throw new IllegalArgumentException("A equipa com o cÃ³digo:" + equipa.getCodIdent() + " jÃ¡ existe");
+			throw new IllegalArgumentException("A equipa com o código:" + equipa.getCodIdent() + " já existe");
 
 		}
 
@@ -111,7 +111,7 @@ public class Competicao {
 
 	// CONSTRUTOR DEFAULT
 
-	// CONSTRUTOR COM PARÃ‚METROS
+	// CONSTRUTOR COM PARÂMETROS
 
 	// =======================================================
 	// =================== .COMPORTAMENTOS ==================
@@ -201,20 +201,6 @@ public class Competicao {
 		}
 		return -1;
 	}
-<<<<<<< HEAD
-	public boolean jornadaJogo (Jogo jogo1) {
-        for (Jogo jogo : jogo) {
-            if (jogo.getJornada() == jogo.getJornada()) {
-                if (jogo.getEquipaVisitada().getCodIdent() == jogo.getEquipaVisitada().getCodIdent())
-                    return true;
-                if (jogo.getEquipaVisitante().getCodIdent() == jogo.getEquipaVisitante().getCodIdent());
-                    return true;
-
-            }
-        }
-        return false;
-    }
-=======
 
 	public boolean jornadaJogo (Jogo jogo1) {
 		for (Jogo jogo : jogo) {
@@ -229,9 +215,8 @@ public class Competicao {
 		return false;
 	}
 
->>>>>>> Desenvolvimento
 	// =======================================================
-	// ============== MÃ‰TODOS COMPLEMENTARES ==============
+	// ============== MÉTODOS COMPLEMENTARES ==============
 	// =======================================================
 
 	// ----> toString()

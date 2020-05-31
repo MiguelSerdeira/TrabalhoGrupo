@@ -73,22 +73,13 @@ public class Equipa {
 
 	// CONSTRUTOR DEFAULT
 
-<<<<<<< HEAD
-	// CONSTRUTOR COM PARÃ‚METROS
-=======
-	// CONSTRUTOR COM PARï¿½METROS
->>>>>>> Desenvolvimento
+	// CONSTRUTOR COM PARÂMETROS
 
 	// =======================================================
 	// =================== .COMPORTAMENTOS ==================
 	// =======================================================
-<<<<<<< HEAD
 
-<<<<<<< HEAD
 	public String mostrarTudo() {
-=======
-public String mostrarTudo() {
->>>>>>> Desenvolvimento
 		String mostrar = "";
 		mostrar += "======EQUIPA======" + "\n";
 
@@ -168,94 +159,8 @@ public String mostrarTudo() {
 		return -1;
 	}
 
-=======
-	public String mostrarTudo() { 
-		String mostrar = ""; 
-		mostrar += "======EQUIPA======" + "\n"; 
- 
-		mostrar += "Equipa: " + this.getNome() + "\n"; 
-		mostrar += "Codigo: " + this.getCodIdent() + "\n"; 
-		mostrar += "Escalao: " + this.getEscalao() + "\n"; 
-		mostrar += "Jogadores: " + this.getJogador().size() + "\n"; 
-		mostrar += "Treinadores: " + this.getTreinador().size() + "\n"; 
-		return mostrar; 
-	} 
- 
-	public String mostrarJogadores() { 
-		String mostrar = ""; 
- 
-		this.jogador.sort(null); 
-		for (Jogador jogador : jogador) { 
-			mostrar += jogador.mostrarTudo(); 
-		} 
-		return mostrar; 
-	} 
- 
-	public String mostrarTreinadores() { 
-		String mostrar = ""; 
- 
-		this.jogador.sort(null); 
-		for (Treinador treinador : treinador) { 
-			mostrar += treinador.mostrarTudo(); 
-		} 
-		return mostrar; 
-	} 
- 
-	public boolean removeJogador(int numeroCartaoCidadao) { 
-		int procurar = cidadaoJogador(numeroCartaoCidadao); 
-		if (procurar == -1) 
-			return false; 
-		this.jogador.remove(procurar); 
-		return true; 
-	} 
- 
-	public boolean removeTreinador(int numeroCartaoCidadao) { 
-		int procurar = cidadaoTreinador(numeroCartaoCidadao); 
-		if (procurar == -1) 
-			return false; 
-		this.treinador.remove(procurar); 
-		return true; 
-	} 
- 
-	public boolean editarJogador(int numeroCartaoCidadao, Jogador jogador) { 
-		int procurar = cidadaoJogador(numeroCartaoCidadao); 
-		if (procurar == -1) 
-			return false; 
-		this.jogador.set(procurar, jogador); 
-		return true; 
-	} 
- 
-	public boolean editarTreinador(int numeroCartaoCidadao, Treinador treinador) { 
-		int procurar = cidadaoTreinador(numeroCartaoCidadao); 
-		if (procurar == -1) 
-			return false; 
-		this.treinador.set(procurar, treinador); 
-		return true; 
-	} 
- 
-	public int cidadaoJogador(int numeroCartaoCidadao) { 
-		for (int i = 0; i < jogador.size(); i++) { 
-			if (jogador.get(i).getNumeroCartaoCidadao() == numeroCartaoCidadao) 
-				return i; 
-		} 
-		return -1; 
-	} 
- 
-	public int cidadaoTreinador(int numeroCartaoCidadao) { 
-		for (int i = 0; i < treinador.size(); i++) { 
-			if (treinador.get(i).getNumeroCartaoCidadao() == numeroCartaoCidadao) 
-				return i; 
-		} 
-		return -1; 
-	} 
- 
->>>>>>> Desenvolvimento
 	// =======================================================
-<<<<<<< HEAD
-	// ============== MÃ‰TODOS COMPLEMENTARES ==============
-=======
-	// ============== Mï¿½TODOS COMPLEMENTARES ==============
->>>>>>> Desenvolvimento
+	// ============== MÉTODOS COMPLEMENTARES ==============
 	// =======================================================
 
 	// ----> toString()

@@ -59,7 +59,7 @@ public abstract class Pessoa implements Comparable <Pessoa> {
 
    
 
-    // CONSTRUTOR COM PARÃ‚METROS
+    // CONSTRUTOR COM PARÂMETROS
 
 
 
@@ -73,7 +73,7 @@ public abstract class Pessoa implements Comparable <Pessoa> {
 
 
     // =======================================================
-    // ============== MÃ‰TODOS COMPLEMENTARES ==============
+    // ============== MÉTODOS COMPLEMENTARES ==============
     // =======================================================
 
     // ----> toString()

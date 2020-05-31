@@ -5,8 +5,8 @@ import java.util.Date;
 public class Treinador extends Pessoa{
 
 
-
-     // =======================================================
+	 
+	 // =======================================================
     // ===================== ATRIBUTOS =======================
     // =======================================================
 
@@ -22,13 +22,13 @@ public class Treinador extends Pessoa{
     // =================== CONSTRUTORES =====================
     // =======================================================
 
-
-
+  
+   
     // CONSTRUTOR DEFAULT
 
+   
 
-
-    // CONSTRUTOR COM PARÃ‚METROS
+    // CONSTRUTOR COM PARÂMETROS
 
 
 
@@ -36,22 +36,22 @@ public class Treinador extends Pessoa{
     // =================== .COMPORTAMENTOS ==================
     // =======================================================
 
-    public String mostrarTudo() {
-        String mostrar = "";
-        mostrar += "======TREINADOR======" + "\n";
+	public String mostrarTudo() {
+		String mostrar = "";
+		mostrar += "======TREINADOR======" + "\n";
 
-        mostrar += "Nome: " + this.getNome() + "\n";
-        mostrar += "Contato: " + this.getContacto() + "\n";
-        mostrar += "Email: " + this.getEmail() + "\n";
-        mostrar += "CartÃ£o de cidadÃ£o: " + this.getNumeroCartaoCidadao() + "\n";
-        mostrar += "Data Nascimento: " + this.getDataNascimento() + "\n";
+		mostrar += "Nome: " + this.getNome() + "\n";
+		mostrar += "Contato: " + this.getContacto() + "\n";
+		mostrar += "Email: " + this.getEmail() + "\n";
+		mostrar += "Cartão de cidadão: " + this.getNumeroCartaoCidadao() + "\n";
+		mostrar += "Data Nascimento: " + this.getDataNascimento() + "\n";
 
-        return mostrar;
-    }
+		return mostrar;
+	}
 
 
     // =======================================================
-    // ============== MÃ‰TODOS COMPLEMENTARES ==============
+    // ============== MÉTODOS COMPLEMENTARES ==============
     // =======================================================
 
     // ----> toString()

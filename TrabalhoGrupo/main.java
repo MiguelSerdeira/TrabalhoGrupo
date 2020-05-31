@@ -64,7 +64,7 @@ public class main {
 		jogador1.setNome("Miguel");
 		jogador1.setNumeroCartaoCidadao(321);
 		jogador1.setPe("D");
-		jogador1.setPosicao("MÃ©dio");
+		jogador1.setPosicao("Médio");
 		
 		Jogador jogador2 = new Jogador();
 		equipa1.addJogador(jogador2);
@@ -75,7 +75,7 @@ public class main {
 		jogador2.setNome("Daniel");
 		jogador2.setNumeroCartaoCidadao(321);
 		jogador2.setPe("D");
-		jogador2.setPosicao("MÃ©dio");
+		jogador2.setPosicao("Médio");
 		
 		
 		Jogador jogador3 = new Jogador();
@@ -87,7 +87,7 @@ public class main {
 		jogador3.setNome("X");
 		jogador3.setNumeroCartaoCidadao(321);
 		jogador3.setPe("D");
-		jogador3.setPosicao("MÃ©dio");
+		jogador3.setPosicao("Médio");
 		
 		Clube clube1 = new Clube();
 
