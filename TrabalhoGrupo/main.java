@@ -25,19 +25,26 @@ public class main {
 		arbitro1.setEmail("teste@gmail.com");
 		arbitro1.setNome("Manel");
 
-		jogos1.setData(new Date("12/10/2020  12:00:00"));
-		jogos1.setEquipaVisitada("Barcelona");
-		jogos1.setEquipaVisitante("Real Madrid");
-		jogos1.setGolosVisitada(1);
-		jogos1.setGolosVisitante(2);
-		jogos1.setJornada(3);
-
 		Equipa equipa1 = new Equipa();
 		competicao.addEquipas(equipa1);
-
-		equipa1.setCodIdent(123);
+		equipa1.setCodIdent(12345);
 		equipa1.setEscalao("Juvenil");
 		equipa1.setNome("Barcelona");
+
+		Equipa equipa2 = new Equipa();
+		competicao.addEquipas(equipa2);
+		equipa2.setCodIdent(1234);
+		equipa2.setEscalao("Juvenil");
+		equipa2.setNome("Real Madrid");
+		
+		jogos1.setData(new Date("12/10/2020  12:00:00"));
+		jogos1.setEquipaVisitada(equipa1);
+		jogos1.setEquipaVisitante(equipa2);
+		jogos1.addGoloVisitada(12345);
+		jogos1.addGoloVisitante(1234);
+		jogos1.addGoloVisitada(12345);
+		jogos1.removerGoloVisitada(12345);
+		jogos1.setJornada(3);
 
 		Treinador treinador1 = new Treinador();
 		equipa1.addTreinador(treinador1);
@@ -57,8 +64,31 @@ public class main {
 		jogador1.setNome("Miguel");
 		jogador1.setNumeroCartaoCidadao(321);
 		jogador1.setPe("D");
-		jogador1.setPosicao("M�dio");
+		jogador1.setPosicao("Médio");
+		
+		Jogador jogador2 = new Jogador();
+		equipa1.addJogador(jogador2);
 
+		jogador2.setContacto(964342572);
+		jogador2.setDataNascimento(new Date("12/10/2020  12:00:00"));
+		jogador2.setEmail("teste@gmail.com");
+		jogador2.setNome("Daniel");
+		jogador2.setNumeroCartaoCidadao(321);
+		jogador2.setPe("D");
+		jogador2.setPosicao("Médio");
+		
+		
+		Jogador jogador3 = new Jogador();
+		equipa1.addJogador(jogador3);
+
+		jogador3.setContacto(964342572);
+		jogador3.setDataNascimento(new Date("12/10/2020  12:00:00"));
+		jogador3.setEmail("teste@gmail.com");
+		jogador3.setNome("X");
+		jogador3.setNumeroCartaoCidadao(321);
+		jogador3.setPe("D");
+		jogador3.setPosicao("Médio");
+		
 		Clube clube1 = new Clube();
 
 		clube1.setCodIdent(123);
@@ -69,12 +99,8 @@ public class main {
 		clube1.addEquipas(equipa1);
 		clube1.setMorada("teste");
 		clube1.setNome("Barcelona");
-
-//	System.out.println(competicao);
-//	System.out.println(clube1);
-//	System.out.println(clube1.nTotalJogadores());
-//	System.out.println(clube1.nTotalTreinadores());
-
+		System.out.println(competicao.mostrarTudo());
+		
 	}
 
 }
