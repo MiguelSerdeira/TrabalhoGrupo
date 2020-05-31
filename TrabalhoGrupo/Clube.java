@@ -106,11 +106,27 @@ public class Clube {
 
 	// CONSTRUTOR DEFAULT
 
-	// CONSTRUTOR COM PARÂMETROS
+	// CONSTRUTOR COM PARï¿½METROS
 
 	// =======================================================
 	// =================== .COMPORTAMENTOS ==================
 	// =======================================================
+	
+	public String mostrarTudo() {
+		String mostrar = "";
+		mostrar += "======CLUBE======"+ "\n";
+		mostrar += "Clube: " + this.getNome() + "\n"; 
+		mostrar += "Codigo: " + this.getCodIdent() + "\n";
+		mostrar += "Equipas : " + this.getEquipa().size() + "\n";
+		mostrar += "Email: " + this.getEmail() + "\n";
+		mostrar += "Morada: " + this.getMorada() + "\n";
+		mostrar += "Contacto: " + this.getContato() + "\n";
+		mostrar += "Cor do Equipamento: " + this.getCorEquipamento() + "\n";
+		mostrar += "Data de FundaÃ§Ã£o: " + this.getDataFundacao() + "\n";
+
+		return mostrar;
+
+	}
 	
 	public int nTotalJogadores() {
 		int nmrJogadores = 0;
@@ -152,7 +168,7 @@ public class Clube {
         return -1; 
     } 
 	// =======================================================
-	// ============== MÉTODOS COMPLEMENTARES ==============
+	// ============== Mï¿½TODOS COMPLEMENTARES ==============
 	// =======================================================
 
 	// ----> toString()
