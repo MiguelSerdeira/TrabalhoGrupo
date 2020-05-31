@@ -198,6 +198,18 @@ public class Competicao {
 		}
 		return -1;
 	}
+	public boolean jornadaJogo (Jogo jogo1) {
+        for (Jogo jogo : jogo) {
+            if (jogo.getJornada() == jogo.getJornada()) {
+                if (jogo.getEquipaVisitada().getCodIdent() == jogo.getEquipaVisitada().getCodIdent())
+                    return true;
+                if (jogo.getEquipaVisitante().getCodIdent() == jogo.getEquipaVisitante().getCodIdent());
+                    return true;
+
+            }
+        }
+        return false;
+    }
 	// =======================================================
 	// ============== M�TODOS COMPLEMENTARES ==============
 	// =======================================================
