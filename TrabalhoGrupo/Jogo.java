@@ -98,37 +98,36 @@ public class Jogo {
 
 	// CONSTRUTOR DEFAULT
 
-	// CONSTRUTOR COM PARï¿½METROS
+	// CONSTRUTOR COM PARÂMETROS
 
 	// =======================================================
 	// =================== .COMPORTAMENTOS ==================
 	// =======================================================
-public boolean removerArbitro(int numeroCartaoCidadao) {
-        int procurar = cidadaoArbitro(numeroCartaoCidadao);
-        if (procurar == -1)
-            return false;
-        this.arbitro.remove(procurar);
-        return true;
-    }
-
-    public boolean editarArbitro(int numeroCartaoCidadao, Arbitro arbitro) {
-        int procurar = cidadaoArbitro(numeroCartaoCidadao);
-        if (procurar == -1)
-            return false;
-        this.arbitro.set(procurar, arbitro);
-        return true;
-    }
-
-    private int cidadaoArbitro(int numeroCartaoCidadao) {
-        for (int i = 0; i < arbitro.size(); i++) {
-            if (arbitro.get(i).getNumeroCartaoCidadao() == numeroCartaoCidadao)
-                return i;
-        }
-        return -1;
-    }
-
+	public boolean removerArbitro(int numeroCartaoCidadao) { 
+        int procurar = cidadaoArbitro(numeroCartaoCidadao); 
+        if (procurar == -1) 
+            return false; 
+        this.arbitro.remove(procurar); 
+        return true; 
+    } 
+ 
+    public boolean editarArbitro(int numeroCartaoCidadao, Arbitro arbitro) { 
+        int procurar = cidadaoArbitro(numeroCartaoCidadao); 
+        if (procurar == -1) 
+            return false; 
+        this.arbitro.set(procurar, arbitro); 
+        return true; 
+    } 
+ 
+    private int cidadaoArbitro(int numeroCartaoCidadao) { 
+        for (int i = 0; i < arbitro.size(); i++) { 
+            if (arbitro.get(i).getNumeroCartaoCidadao() == numeroCartaoCidadao) 
+                return i; 
+        } 
+        return -1; 
+    } 
 	// =======================================================
-	// ============== Mï¿½TODOS COMPLEMENTARES ==============
+	// ============== MÉTODOS COMPLEMENTARES ==============
 	// =======================================================
 
 	// ----> toString()

@@ -99,6 +99,19 @@ public class Clube {
 
 	}
 
+	
+	// =======================================================
+	// =================== CONSTRUTORES =====================
+	// =======================================================
+
+	// CONSTRUTOR DEFAULT
+
+	// CONSTRUTOR COM PARÂMETROS
+
+	// =======================================================
+	// =================== .COMPORTAMENTOS ==================
+	// =======================================================
+	
 	public int nTotalJogadores() {
 		int nmrJogadores = 0;
 		for (Equipa equipa : this.equipa) {
@@ -114,42 +127,32 @@ public class Clube {
 		}
 		return nmrTreinadores;
 	}
+	
+	public boolean removeEquipa(int codIdent) { 
+        int procurar = codIdentEquipa(codIdent); 
+        if (procurar == -1) 
+            return false; 
+        this.equipa.remove(procurar); 
+        return true; 
+    } 
+ 
+    public boolean editarEquipa(int codIdent, Equipa equipa) { 
+        int procurar = codIdentEquipa(codIdent); 
+        if (procurar == -1) 
+            return false; 
+        this.equipa.set(procurar, equipa); 
+        return true; 
+    } 
+ 
+    public int codIdentEquipa(int codIdent) { 
+        for (int i = 0; i < equipa.size(); i++) { 
+            if (equipa.get(i).getCodIdent() == codIdent) 
+                return i; 
+        } 
+        return -1; 
+    } 
 	// =======================================================
-	// =================== CONSTRUTORES =====================
-	// =======================================================
-
-	// CONSTRUTOR DEFAULT
-
-	// CONSTRUTOR COM PARï¿½METROS
-
-	// =======================================================
-	// =================== .COMPORTAMENTOS ==================
-	// =======================================================
-public boolean removeEquipa(int codIdent) {
-        int procurar = codIdentEquipa(codIdent);
-        if (procurar == -1)
-            return false;
-        this.equipa.remove(procurar);
-        return true;
-    }
-
-    public boolean editarEquipa(int codIdent, Equipa equipa) {
-        int procurar = codIdentEquipa(codIdent);
-        if (procurar == -1)
-            return false;
-        this.equipa.set(procurar, equipa);
-        return true;
-    }
-
-    public int codIdentEquipa(int codIdent) {
-        for (int i = 0; i < equipa.size(); i++) {
-            if (equipa.get(i).getCodIdent() == codIdent)
-                return i;
-        }
-        return -1;
-    }
-	// =======================================================
-	// ============== Mï¿½TODOS COMPLEMENTARES ==============
+	// ============== MÉTODOS COMPLEMENTARES ==============
 	// =======================================================
 
 	// ----> toString()

@@ -100,7 +100,7 @@ public class Competicao {
 
 	// CONSTRUTOR DEFAULT
 
-	// CONSTRUTOR COM PARï¿½METROS
+	// CONSTRUTOR COM PARÂMETROS
 
 	// =======================================================
 	// =================== .COMPORTAMENTOS ==================
@@ -198,8 +198,9 @@ public class Competicao {
 		}
 		return -1;
 	}
+
 	// =======================================================
-	// ============== Mï¿½TODOS COMPLEMENTARES ==============
+	// ============== MÉTODOS COMPLEMENTARES ==============
 	// =======================================================
 
 	// ----> toString()
