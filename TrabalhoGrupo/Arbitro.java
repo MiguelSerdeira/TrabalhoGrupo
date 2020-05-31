@@ -20,14 +20,26 @@ public class Arbitro extends Pessoa {
 
 	// CONSTRUTOR DEFAULT
 
-	// CONSTRUTOR COM PARÂMETROS
+	// CONSTRUTOR COM PARï¿½METROS
 
 	// =======================================================
 	// =================== .COMPORTAMENTOS ==================
 	// =======================================================
+	public String mostrarTudo() {
+        String mostrar = "";
+        mostrar += "======ARBITRO======" + "\n";
 
+        mostrar += "Nome: " + this.getNome() + "\n";
+        mostrar += "Contato: " + this.getContacto() + "\n";
+        mostrar += "Email: " + this.getEmail() + "\n";
+        mostrar += "CartÃ£o de cidadÃ£o: " + this.getNumeroCartaoCidadao() + "\n";
+        mostrar += "Data de Nascimento: " + this.getDataNascimento() + "\n";
+
+
+        return mostrar;
+    }
 	// =======================================================
-	// ============== MÉTODOS COMPLEMENTARES ==============
+	// ============== Mï¿½TODOS COMPLEMENTARES ==============
 	// =======================================================
 
 	// ----> toString()
